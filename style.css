@@ -1,0 +1,64 @@
+.searchInputContainer input {
+    width: 100%;
+    height: 35px;
+    font-size: 15px;
+    padding-left: 20px;
+    border: 2px solid #111;
+    border-radius: 5px;
+    outline: none;
+}
+
+.searchResultContainer {
+    width: 100%;
+    margin-top: 35px;
+    padding: 10px;
+}
+
+.searchResultContainer .col-4 {
+    padding: 0px !important;
+}
+
+.productResultContainer {
+    padding: 2px;
+    border: 2px solid #111;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+}
+
+.productResultContainer:hover {
+    cursor: pointer;
+}
+
+.productResultContainer img {
+    width: 100%;
+    transition: transform .2s;
+}
+
+.productResultContainer img:hover {
+    transform: scale(1.3);
+}
+
+.productInfoContainer {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    color: white;
+    font-size: 15px;
+    left: 0;
+    background: rgba(0, 60, 255, 0.616);
+    height: 50px;
+    font-weight: bold;
+    padding: 9px;
+}
+
+.posOrderContainer {
+    padding: 0px !important;
+    border-left: 4px solid #ff00dd;
+}
+
+.pos_header {
+    background: rgba(0, 38, 255, 0.514);
+    text-align: center;
+}
