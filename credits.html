@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inventory</title>
+    <title>CREDITS</title>
     <link rel="stylesheet" href="inventorystyle.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -32,9 +32,9 @@
         <main>
             <div class="buttons-container">
                 <div class="buttons">
-                    <button class="add"> <a href="addproduct.html"> ADD PRODUCT </a></button>
-                    <button class="edit"><a href="editproduct.html"> EDIT PRODUCT</a></button>
-                    <button class="remove"><a href="removeproduct.html"> REMOVE PRODUCT</a></button>
+                    <button class="add"> <a href="addcustomer.html"> ADD CUSTOMER </a></button>
+                    <button class="edit"><a href="editcustomer.html"> EDIT CUSTOMER</a></button>
+                    <button class="remove"><a href="removecustomer.html"> REMOVE CUSTOMER</a></button>
                 </div>
                 <i class="fa fa-exclamation-triangle caution-sign" aria-hidden="true"></i>
                 <input type="search" id="search" placeholder="Search...">
@@ -44,12 +44,13 @@
                     <thead>
                         <tr>
                             <th>ID</th>
-                            <th>CATEGORY ID</th>
-                            <th>PRODUCT ID</th>
-                            <th>PRODUCT NAME</th>
-                            <th>QUANTITY</th>
-                            <th>PRICE</th>
-                            <th>STOCK LEVEL</th>
+                            <th>CUSTOMER ID</th>
+                            <th>CUSTOMER NAME</th>
+                            <th>PHONE NUMBER</th>
+                            <th>TRANSACTION DATE</th>
+                            <th>DUE DATE</th>
+                            <th>BALANCE</th>
+                            <th>STATUS</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -59,8 +60,9 @@
                             <td>X</td>
                             <td>X</td>
                             <td>X</td>
+                            <td>X</td>
                             <td>P_________</td>
-                            <td>SUFFICIENT</td>
+                            <td>PAID</td>
                         </tr>
                         <tr>
                             <td>X</td>
@@ -68,8 +70,9 @@
                             <td>X</td>
                             <td>X</td>
                             <td>X</td>
+                            <td>X</td>
                             <td>P_________</td>
-                            <td>CRITICAL</td>
+                            <td>UNPAID</td>
                         </tr>
                     </tbody>
                 </table>

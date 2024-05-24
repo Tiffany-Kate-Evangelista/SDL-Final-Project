@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Summary Report</title>
+    <style>
+        /* Paste the provided CSS here */
+        /* inventorystyle.css */
+
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f4f4f4;
+        }
+
+        h1, h2 {
+            margin: 0;
+        }
+
+        .menu {
+            width: 250px;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: -250px;
+            background-color: #0044cc;
+            color: white;
+            overflow-y: auto;
+            transition: left 0.3s;
+            margin-top: 20px;
+        }
+
+        .menu-content {
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .menu h2 {
+            margin-top: 20px;
+        }
+
+        .menu ul {
+            list-style-type: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+
+        .menu ul li {
+            margin: 20px 0;
+        }
+
+        .menu ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .menu-toggle {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            font-size: 24px;
+            background-color: #0044cc;
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .menu-open .menu {
+            left: 0;
+        }
+
+        .menu-open .container {
+            margin-left: 250px;
+        }
+
+        /* Container Styles */
+        .container {
+            margin-left: 250px;
+            padding: 20px;
+            transition: margin-left 0.3s;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        header .logo img {
+            height: 50px;
+        }
+
+        header .title h1 {
+            font-size: 24px;
+            color: #333;
+        }
+
+        header .title p {
+            font-size: 14px;
+            color: #777;
+        }
+
+        /* Buttons Container Styles */
+        .buttons-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 20px 0;
+        }
+
+        .buttons-container .buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .buttons-container button {
+            padding: 10px 20px;
+            border: 2px solid #000000;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button.download {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        button.preview {
+            background-color: #FFC107;
+            color: white;
+        }
+
+        button.download:hover {
+            background-color: #45A049;
+        }
+
+        button.preview:hover {
+            background-color: #FFB300;
+        }
+
+        .buttons-container .caution-sign {
+            color: #FF5722;
+            font-size: 24px;
+        }
+
+        .buttons-container input[type="search"] {
+            padding: 10px;
+            border: 2px solid #000000;
+            border-radius: 5px;
+        }
+
+        /* Table Styles */
+        .table {
+            overflow-x: auto;
+        }
+
+        .table table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .table th, .table td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .table th {
+            background-color: #f4f4f4;
+        }
+
+        .table tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        .buttons-container .caution-sign {
+            color: #FF5722;
+            font-size: 24px;
+            cursor: pointer; /* Add cursor pointer for the caution sign */
+            transition: transform 0.3s; /* Add transition for transform */
+        }
+
+        .buttons-container .caution-sign:hover {
+            transform: scale(1.1); /* Enlarge the caution sign on hover */
+        }
+
+        .caution-box {
+            position: absolute;
+            background-color: red;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            top: 50%;
+            transform: translateY(-50%);
+            left: calc(100% + 10px); /* Position the box to the right of the search bar */
+            display: none; /* Hide the box by default */
+        }
+
+        .buttons-container input[type="search"]:hover + .caution-box {
+            display: block; /* Show the box when search input is hovered */
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #90c5ff;
+            color: rgb(0, 0, 0);
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .menu {
+                left: -100%;
+            }
+
+            .menu.show {
+                left: 0;
+            }
+
+            .container {
+                margin-left: 0;
+            }
+
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .buttons-container {
+                flex-direction: column;
+            }
+
+            .buttons-container .buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="menu" id="menu">
+        <div class="menu-content">
+            <h2>MENU</h2>
+            <ul>
+                <li><a href="homepage.html">HOME</a></li>
+                <li><a href="inventory.html">INVENTORY</a></li>
+                <li><a href="credits.html">CREDITS</a></li>
+                <li><a href="summary-report.html">SUMMARY REPORT</a></li>
+            </ul>
+        </div>
+    </div>
+   
+    <div class="container" id="main-container">
+        <header>
+            <div class="logo">
+                <img src="logo.png" alt="Logo">
+            </div>
+            <div class="title">
+                <h1>Summary Report</h1> <!-- Updated the title to "Summary Report" -->
+                <p>Sari-Sari Store Management: Cash Register, Inventory, and Credit Tracking System with Real-time Updates and Automated Order Processing</p>
+            </div>
+        </header>
+        <main>
+            <div class="buttons-container">
+                <div class="buttons">
+                    <button class="download"> <a href="download.html">DOWNLOAD</a></button> <!-- Changed "Add Product" to "Download" -->
+                    <button class="preview"><a href="preview.html">PREVIEW</a></button> <!-- Changed "Edit Product" to "Preview" -->
+                </div>
+                <i class="fa fa-exclamation-triangle caution-sign" aria-hidden="true"></i>
+                <input type="search" id="search" placeholder="Search...">
+            </div>
+            <section class="table">
+                <table class="labels">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Product ID</th>
+                            <th>Product Name</th>
+                            <th>Transaction Type</th>
+                            <th>Transaction Date</th>
+                            <th>Quantity</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>X</td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td>X</td>
+                        </tr>
+                        <tr>
+                            <td>X</td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td>X</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+    <button class="menu-toggle" id="menu-toggle">☰</button>
+
+    <footer>
+        <div class="foot">
+            <p>&copy; 2024 Group 6. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="homepagescript.js"></script>
+</body>
+</html>

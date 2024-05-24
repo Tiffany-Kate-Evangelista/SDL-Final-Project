@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Summary Report</title>
+</head>
+<body>
+    <h1>Summary Report</h1>
+    
+    <a href="summary_report.pdf" download="summary_report.pdf">Download PDF</a>
+    
+    <button onclick="downloadSummaryReport()">Download Excel <i class="fa fa-download"></i></button>
+
+    <script>
+        // Function to trigger the download of the summary report in Excel format
+        function downloadSummaryReport() {
+            window.location.href = "summary_report.xlsx";
+        }
+    </script>
+</body>
+</html>

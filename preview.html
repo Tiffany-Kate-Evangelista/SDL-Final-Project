@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Summary Report Preview</title>
+</head>
+<body>
+    <h1>Summary Report Preview</h1>
+    
+    <!-- Table to display the summary report data -->
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Product ID</th>
+                <th>Product Name</th>
+                <th>Transaction Type</th>
+                <th>Transaction Date</th>
+                <th>Quantity</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>12345</td>
+                <td>Product A</td>
+                <td>Sale</td>
+                <td>2024-05-01</td>
+                <td>10</td>
+            </tr>
+            <!-- Add more rows as needed -->
+        </tbody>
+    </table>
+    
+    <!-- Example of Preview Button with Icon -->
+    <button onclick="previewSummaryReport()">Preview Summary Report <i class="fa fa-eye"></i></button>
+
+    <script>
+        // Function to display the summary report data in a preview
+        function previewSummaryReport() {
+            // Here you would typically fetch the report data from a database
+            // or an API and dynamically populate the table
+            // For the sake of this example, we're displaying static data
+            alert("This is just a preview. Actual data would be dynamically loaded.");
+        }
+    </script>
+</body>
+</html>
