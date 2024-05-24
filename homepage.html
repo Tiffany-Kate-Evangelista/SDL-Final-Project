@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cash Register</title>
+    <link rel="stylesheet" href="homepagestyle.css">
+</head>
+<body>
+    <div class="menu" id="menu">
+        <div class="menu-content">
+            <h2>MENU</h2>
+            <ul>
+                <li><a href="#inventory">INVENTORY</a></li>
+                <li><a href="#credits">CREDITS</a></li>
+                <li><a href="#summary-report">SUMMARY REPORT</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="container" id="main-container">
+        <header>
+            <div class="logo">
+                <img src="logo.png" alt="Logo">
+            </div>
+            <div class="title">
+                <h1>CASH REGISTER</h1>
+                <p>Sari-Sari Store Management: Cash Register, Inventory, and Credit Tracking System with Real-time Updates and Automated Order Processing</p>
+            </div>
+        </header>
+        <main>
+            <section class="product-info">
+                <div class="picture">
+                    <div class="image-placeholder">PICTURE</div>
+                </div>
+                <div class="details">
+                    <div class="price">
+                        <label>PRICE</label>
+                        <span>P_______</span>
+                    </div>
+                    <div class="info">
+                        <p>PRODUCT NAME <span>----------</span></p>
+                        <p>PRODUCT ID <span>----------</span></p>
+                        <p>CATEGORY <span>----------</span></p>
+                        <p>QUANTITY <span>----------</span></p>
+                        <p>STOCK <span>----------</span></p>
+                    </div>
+                    <div class="buttons">
+                        <button class="add">ADD</button>
+                        <button class="cancel">CANCEL</button>
+                    </div>
+                </div>
+            </section>
+            <section class="order-summary">
+                <div class="order-list">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>PRODUCT</th>
+                                <th>PRODUCT ID</th>
+                                <th>QTY</th>
+                                <th>PRICE</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>X</td>
+                                <td>X</td>
+                                <td>X</td>
+                                <td>P_______</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="total-info">
+                    <p>TOTAL <span>P_______</span></p>
+                    <p>OUTSTANDING BALANCE <span>P_______</span></p>
+                    <p>PAYMENT <span>P_______</span></p>
+                    <p>CHANGE <span>P_______</span></p>
+                    <div class="buttons">
+                        <button class="confirm">CONFIRM</button>
+                        <button class="cancel">CANCEL</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <button class="menu-toggle" id="menu-toggle">☰</button>
+
+    <footer>
+        <div class="foot">
+            <p>&copy; 2024 Group 6. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="homepagescript.js"></script>
+</body>
+</html>
