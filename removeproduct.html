@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Remove Product Interface</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .container {
+        max-width: 600px;
+        margin: 20px auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    h1 {
+        text-align: center;
+    }
+    
+    form {
+        margin-bottom: 20px;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 5px;
+    }
+    
+    input[type="text"],
+    input[type="number"] {
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    
+    input[type="submit"] {
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #dc3545;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 100%;
+    }
+</style>
+</head>
+<body>
+    <div class="container">
+        <h1>Remove Product</h1>
+        <form id="removeProductForm">
+            <label for="productId">Product ID:</label>
+            <input type="text" id="productId" placeholder="Enter product ID" required>
+
+            <label for="productName">Product Name:</label>
+            <input type="text" id="productName" placeholder="Enter product name" required>
+
+            <input type="submit" value="Remove Product">
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('removeProductForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+            var productIdInput = document.getElementById('productId');
+            var productNameInput = document.getElementById('productName');
+            var productId = productIdInput.value.trim();
+            var productName = productNameInput.value.trim();
+
+            // You can perform further actions here such as sending an API request to remove the product from the database
+            
+            alert('Product with ID ' + productId + ' and name ' + productName + ' has been removed.'); // For demonstration purposes, show an alert
+            productIdInput.value = ''; // Clear the input fields after removing the product
+            productNameInput.value = '';
+        });
+    </script>
+</body>
+</html>

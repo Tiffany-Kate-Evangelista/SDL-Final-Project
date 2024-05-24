@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Add Product Interface</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 10px;
+    }
+    
+    .container {
+        max-width: 600px;
+        margin: 20px auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    h1 {
+        text-align: center;
+    }
+    
+    form {
+        margin-bottom: 20px;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 5px;
+    }
+    
+    input[type="text"],
+    input[type="number"],
+    input[type="date"] {
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    
+    input[type="submit"] {
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 100%;
+    }
+    
+    ul {
+        list-style-type: none;
+        padding: 0;
+    }
+    
+    li {
+        background-color: #f9f9f9;
+        margin-bottom: 10px;
+        padding: 10px;
+        border-radius: 5px;
+        box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+    }
+    
+    li:last-child {
+        margin-bottom: 0;
+    }
+</style>
+</head>
+<body>
+    <div class="container">
+        <h1>Add Product</h1>
+        <form id="productForm">
+            <label for="productName">Product Name:</label>
+            <input type="text" id="productName" placeholder="Enter product name" required>
+            
+            <label for="productId">Product ID:</label>
+            <input type="text" id="productId" placeholder="Enter product ID" required>
+
+            <label for="categoryId">Category ID:</label>
+            <input type="text" id="categoryId" placeholder="Enter category ID" required>
+
+            <label for="dateAdded">Date Added:</label>
+            <input type="date" id="dateAdded" required>
+
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" placeholder="Enter quantity" required>
+
+            <label for="criticalIndicator">Critical Indicator (Minimum Quantity to Restock):</label>
+            <input type="number" id="criticalIndicator" placeholder="Enter critical quantity" min="0" required>
+
+            <label for="price">Price:</label>
+            <input type="number" id="price" placeholder="Enter price" step="0.01" required>
+
+            <input type="submit" value="Add Product">
+        </form>
+        <ul id="productList">
+            <!-- Product items will be added here dynamically -->
+        </ul>
+    </div>
+
+    <script>
+        document.getElementById('productForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+            var productNameInput = document.getElementById('productName');
+            var productIdInput = document.getElementById('productId');
+            var categoryIdInput = document.getElementById('categoryId');
+            var dateAddedInput = document.getElementById('dateAdded');
+            var quantityInput = document.getElementById('quantity');
+            var criticalIndicatorInput = document.getElementById('criticalIndicator');
+            var priceInput = document.getElementById('price');
+
+            // Get values from inputs
+            var productName = productNameInput.value.trim();
+            var productId = productIdInput.value.trim();
+            var categoryId = categoryIdInput.value.trim();
+            var dateAdded = dateAddedInput.value;
+            var quantity = parseInt(quantityInput.value);
+            var criticalIndicator = parseInt(criticalIndicatorInput.value);
+            var price = parseFloat(priceInput.value);
+
+            // Validate inputs
+            if (productName === '' || productId === '' || categoryId === '' || isNaN(quantity) || isNaN(criticalIndicator) || isNaN(price)) {
+                alert('Please fill in all fields and ensure that quantity, critical indicator, and price are numeric.');
+                return;
+            }
+
+            // Add product to list
+            addProductToList(productName, productId, categoryId, dateAdded, quantity, criticalIndicator, price);
+
+            // Clear input fields after adding product
+            productNameInput.value = '';
+            productIdInput.value = '';
+            categoryIdInput.value = '';
+            dateAddedInput.value = '';
+            quantityInput.value = '';
+            criticalIndicatorInput.value = '';
+            priceInput.value = '';
+        });
+
+        function addProductToList(productName, productId, categoryId, dateAdded, quantity, criticalIndicator, price) {
+            var productList = document.getElementById('productList');
+            var li = document.createElement('li'); // Create a new list item
+            li.innerHTML = `
+                <strong>Product Name:</strong> ${productName}<br>
+                <strong>Product ID:</strong> ${productId}<br>
+                <strong>Category ID:</strong> ${categoryId}<br>
+                <strong>Date Added:</strong> ${dateAdded}<br>
+                <strong>Quantity:</strong> ${quantity}<br>
+                <strong>Critical Indicator (Minimum Quantity to Restock):</strong> ${criticalIndicator}<br>
+                <strong>Price:</strong> $${price.toFixed(2)}
+            `; // Set its HTML content with product details
+            productList.appendChild(li); // Append it to the product list
+        }
+    </script>
+</body>
+</html>

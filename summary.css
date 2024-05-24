@@ -1,0 +1,50 @@
+.buttons-container {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+    align-items: center;
+  }
+  
+  .buttons {
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    margin-right: 10px;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition: all 0.3s ease 0s;
+  }
+  
+  .print {
+    background-color: #4CAF50; /* Green */
+  }
+  
+  .export {
+    background-color: #ffff00; /* Yellow */
+  }
+  
+  .caution-sign {
+    font-size: 24px;
+    color: #ff9900; /* Orange */
+    margin: 0 10px;
+  }
+  
+  #search {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 200px;
+    margin-left: 10px;
+  }
+  
+  .labels {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  /* other CSS styles */

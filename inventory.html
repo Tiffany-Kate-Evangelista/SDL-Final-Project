@@ -31,14 +31,16 @@
         <main>
             <div class="buttons-container">
                 <div class="buttons">
-                    <button class="add">ADD PRODUCT</button>
-                    <button class="edit">EDIT PRODUCT</button>
-                    <button class="remove">REMOVE PRODUCT</button>
+                    <button class="add"> <a href="addproduct.html"> ADD PRODUCT </a></button>
+                    <button class="edit"><a href="editproduct.html"> EDIT PRODUCT</a></button>
+                    <button class="remove"><a href="removeproduct.html"> REMOVE PRODUCT</a></button>
                 </div>
+                <i class="fa fa-exclamation-triangle caution-sign" aria-hidden="true"></i>
+                <input type="search" id="search" placeholder="Search...">
             </div>
             <section class="table">
                 <table class="labels">
-                    <table>
+                    <thead>
                         <tr>
                             <th>ID</th>
                             <th>CATEGORY ID</th>
@@ -48,6 +50,8 @@
                             <th>PRICE</th>
                             <th>STOCK LEVEL</th>
                         </tr>
+                    </thead>
+                    <tbody>
                         <tr>
                             <td>X</td>
                             <td>X</td>
@@ -66,7 +70,7 @@
                             <td>P_________</td>
                             <td>CRITICAL</td>
                         </tr>
-                    </table>
+                    </tbody>
                 </table>
             </section>
         </main>
@@ -81,5 +85,4 @@
 
     <script src="homepagescript.js"></script>
 </body>
-</html>
 </html>
